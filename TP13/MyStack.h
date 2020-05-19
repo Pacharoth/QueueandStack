@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+const int sizeOfStack = 10;
+
 //create structure stack
 struct Stack{
     int          init__element;
@@ -17,6 +19,14 @@ Stack *isEmpty(){
     stackList->top = NULL;
     return stackList;
 }
+
+//create struct stack using array
+struct MyStack{
+    char        mystack[sizeOfStack];
+    int         top;
+};
+struct MyStack stackFirst;
+
 
 //create push
 void push(Stack *stackList, char newData){
@@ -49,7 +59,26 @@ void displayStack(Stack *stackList){
     temporary = stackList->top;
     while (temporary != NULL) {
         cout<<temporary->newData_asCharacter<<"\t";
-        temporary=temporary->next;
+        temporary = temporary->next;
     }
     cout<<endl;
+}
+//create stack isEmpty
+
+void push(char newData){
+    if (stackFirst.top > sizeOfStack-1) {
+        cout<<"Data overflow"<<endl;
+    }else{
+        stackFirst.top = stackFirst.top+1;
+        stackFirst.mystack[stackFirst.top] = newData;
+    }
+}
+
+void pop(){
+    if (stackFirst.top>=0) {
+        stackFirst.mystack[stackFirst.top] = -1;
+        stackFirst.top--;
+    }else{
+        cout<<"Data underflow"<<endl;
+    }
 }
