@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-const int sizeOfStack = 10;
+const int sizeOfStack = 2;
 
 //create structure stack
 struct Stack{
@@ -63,9 +63,9 @@ void displayStack(Stack *stackList){
     }
     cout<<endl;
 }
-//create stack isEmpty
 
-void push(char newData){
+//create push as array
+void mypush(char newData){
     if (stackFirst.top > sizeOfStack-1) {
         cout<<"Data overflow"<<endl;
     }else{
@@ -74,11 +74,21 @@ void push(char newData){
     }
 }
 
-void pop(){
+//create pop as array
+void mypop(){
     if (stackFirst.top>=0) {
         stackFirst.mystack[stackFirst.top] = -1;
         stackFirst.top--;
     }else{
         cout<<"Data underflow"<<endl;
     }
+}
+
+//show data as array
+
+void displayStackAsArray(){
+    for (int i = stackFirst.top; i >= 0; i--) {
+        cout<<stackFirst.mystack[i]<<"\t";
+    }
+    cout<<endl;
 }
