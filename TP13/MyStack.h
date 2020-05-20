@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-const int sizeOfStack = 2;
 
 //create structure stack
 struct Stack{
@@ -20,6 +19,7 @@ Stack *isEmpty(){
     return stackList;
 }
 
+const int sizeOfStack = 2;
 //create struct stack using array
 struct MyStack{
     char        mystack[sizeOfStack];
@@ -58,7 +58,7 @@ void displayStack(Stack *stackList){
     Element *temporary;
     temporary = stackList->top;
     while (temporary != NULL) {
-        cout<<temporary->newData_asCharacter<<"\t";
+        cout<<temporary->newData_asCharacter;
         temporary = temporary->next;
     }
     cout<<endl;
@@ -85,7 +85,6 @@ void mypop(){
 }
 
 //show data as array
-
 void displayStackAsArray(){
     for (int i = stackFirst.top; i >= 0; i--) {
         cout<<stackFirst.mystack[i]<<"\t";
