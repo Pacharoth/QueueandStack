@@ -1,6 +1,7 @@
 #include "MyQueue.h"
 #include "MyStack.h"
 
+//convert nummber to character
 char convertToCharacter(int number){
     char convert;
     if (number == 1) {
